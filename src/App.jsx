@@ -1,4 +1,5 @@
 import "./App.css";
+import {articleStyles} from "./components/IntroSection.jsx"
 
 function getCurrentDateTime() {
   const now = new Date();
@@ -14,24 +15,25 @@ function getCurrentDateTime() {
 function IntroSection() {
   return (
     <div>
-      <h3>TechUp Thailand</h3>
-      <p>เตรียมพบกับหลักสูตรปั้นคุณเป็น Software Developer ภายใน 4 เดือน</p>
-      <a href="https://www.techupth.com/" target="blank">
+      <h3 className={articleStyles.title}>TechUp Thailand</h3>
+      <p className={articleStyles.body}>เตรียมพบกับหลักสูตรปั้นคุณเป็น Software Developer ภายใน 4 เดือน</p>
+      <a href="https://www.techupth.com/" className={articleStyles.link} target="blank">
         techupth.com
       </a>
-      {/* ให้แสดงวันเวลาด้วย Function `getCurrentDateTime` ที่กำหนดไว้ให้ */}
+      <div className="bootcamp-start-time">วันเวลาเริ่มหลักสูตร คือ ({getCurrentDateTime()})</div>
+      
     </div>
   );
 }
 
 function LoginForm() {
   return (
-    <div class="login-container">
-      <form class="login-form">
+    <div className="login-container">
+      <form className="login-form">
         <h2>Login</h2>
-        <label for="username">Username</label>
+        <label htmlFor="username">Username</label>
         <input type="text" id="username" name="username" />
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" />
         <button type="submit">Login</button>
       </form>
