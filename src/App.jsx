@@ -1,5 +1,4 @@
 import "./App.css";
-import {articleStyles} from "./components/IntroSection.jsx"
 
 function getCurrentDateTime() {
   const now = new Date();
@@ -13,6 +12,12 @@ function getCurrentDateTime() {
 }
 
 function IntroSection() {
+  const articleStyles = {
+    container: "article",
+    title: "article-title",
+    body: "article-body",
+    link: "article-link"
+  }
   return (
     <div>
       <h3 className={articleStyles.title}>TechUp Thailand</h3>
@@ -21,7 +26,6 @@ function IntroSection() {
         techupth.com
       </a>
       <div className="bootcamp-start-time">วันเวลาเริ่มหลักสูตร คือ ({getCurrentDateTime()})</div>
-      
     </div>
   );
 }
